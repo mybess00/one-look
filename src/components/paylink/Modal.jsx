@@ -1,4 +1,4 @@
-import { QRCodeSVG } from "qrcode.react";
+import QRCodeSVG from "qrcode.react";
 import { TbCopy } from "react-icons/tb";
 
 export default function Modal ({ title, id, content, picture, copyFunction }) {

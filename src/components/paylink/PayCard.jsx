@@ -83,7 +83,7 @@ export default function PayCard({ id, name, content }) {
         </Toast>
       </ToastContainer>
 
-      <Modal
+      <Modal 
         title={name}
         id={id}
         content={content}
