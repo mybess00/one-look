@@ -1,0 +1,134 @@
+---
+import TextCard from './TextCard.astro';
+
+export interface Props {
+    title: string,
+    subtitle: string,
+    description: string,
+    button: Object,
+}
+
+const { title, subtitle, description, button } = Astro.props
+---
+
+<div class="collapse collapse-arrows bg-base-100 shadow-xl h-min">
+    <input type="checkbox" /> 
+    <div class="collapse-title text-xl font-medium text-center">
+        {title}
+    </div>
+    <div class="collapse-content"> 
+        <TextCard 
+            title={subtitle}
+            description={description}
+            button={{
+                'label': button.label,
+                'link': button.link,
+            }}/>
+    </div>
+</div>
+
+<style>
+    .collapse-arrows .collapse-title:after {
+        position: absolute;
+        display: block;
+        height: 0.5rem/* 8px */;
+        width: 0.5rem/* 8px */;
+        --tw-translate-y: -100%;
+        --tw-rotate: 45deg;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        transition-property: all;
+        transition-duration: 150ms;
+        transition-duration: 0.2s;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        top: 1.875rem;
+        right: 1.4rem/* 22.4px */;
+        content: "";
+        transform-origin: 75% 75%;
+        box-shadow: 2px 2px;
+        pointer-events: none;
+    }
+    [dir="rtl"].collapse-arrows .collapse-title:after {
+        --tw-rotate: -45deg;
+    }
+    .collapse[open].collapse-arrows .collapse-title:after,
+    .collapse-open.collapse-arrows .collapse-title:after,
+    .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="checkbox"]:checked ~ .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="radio"]:checked ~ .collapse-title:after {
+        --tw-translate-y: -50%;
+        --tw-rotate: 225deg;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+    .collapse[open].collapse-arrows .collapse-title:after,
+    .collapse-open.collapse-arrows .collapse-title:after,
+    .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="checkbox"]:checked ~ .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="radio"]:checked ~ .collapse-title:after {
+        --tw-translate-y: -50%;
+        --tw-rotate: 225deg;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+    .collapse[open].collapse-arrows .collapse-title:after,
+    .collapse-open.collapse-arrows .collapse-title:after,
+    .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="checkbox"]:checked ~ .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="radio"]:checked ~ .collapse-title:after {
+        --tw-translate-y: -50%;
+        --tw-rotate: 225deg;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+    .collapse[open].collapse-arrows .collapse-title:after,
+    .collapse-open.collapse-arrows .collapse-title:after,
+    .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="checkbox"]:checked ~ .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="radio"]:checked ~ .collapse-title:after {
+        --tw-translate-y: -50%;
+        --tw-rotate: 225deg;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+    .collapse[open].collapse-arrows .collapse-title:after,
+    .collapse-open.collapse-arrows .collapse-title:after,
+    .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="checkbox"]:checked ~ .collapse-title:after,
+    .collapse-arrows:not(.collapse-close) input[type="radio"]:checked ~ .collapse-title:after {
+        --tw-translate-y: -50%;
+        --tw-rotate: 225deg;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+    [dir="rtl"] .collapse[open].collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-open.collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    [dir="rtl"]
+    .collapse-arrows:not(.collapse-close)
+    input[type="checkbox"]:checked
+    ~ .collapse-title:after {
+        --tw-rotate: 135deg;
+    }
+    [dir="rtl"] .collapse[open].collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-open.collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    [dir="rtl"]
+    .collapse-arrows:not(.collapse-close)
+    input[type="checkbox"]:checked
+    ~ .collapse-title:after {
+        --tw-rotate: 135deg;
+    }
+    [dir="rtl"] .collapse[open].collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-open.collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    [dir="rtl"]
+    .collapse-arrows:not(.collapse-close)
+    input[type="checkbox"]:checked
+    ~ .collapse-title:after {
+        --tw-rotate: 135deg;
+    }
+    [dir="rtl"] .collapse[open].collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-open.collapse-arrows .collapse-title:after,
+    [dir="rtl"] .collapse-arrows:focus:not(.collapse-close) .collapse-title:after,
+    [dir="rtl"]
+    .collapse-arrows:not(.collapse-close)
+    input[type="checkbox"]:checked
+    ~ .collapse-title:after {
+        --tw-rotate: 135deg;
+    }
+</style>

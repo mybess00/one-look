@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon'
+---
+
+
+<footer class="footer flex items-center p-4 bg-neutral text-neutral-content flex-row flex-wrap justify-center mt-16 gap-10 mobile:gap-4">
+    <div class="items-center grid-flow-col">
+      <svg class="fill-current" fillRule="evenodd" clipRule="evenodd" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 1069.695 1143.002"><g><polygon points="0,220.077 837.568,1143.002 1037.29,1143.002 0,0"/><polygon points="0,625.244 0,1143.002 469.871,1143.002 518.646,1143.002 669.593,1143.002 0,405.169"/><path d="M1069.695,329.557h-0.344C1061.558,148.847,912.309,4.179,729.714,4.179H208.607l134.22,147.898h386.887c102.286,0,186.073,80.313,191.85,181.178C915.788,434.119,832,514.433,729.714,514.433h-49.22l126.16,139.016c145.945-33.902,256.06-161.979,262.722-316.496h0.318c-0.025-1.191-0.127-2.361-0.167-3.551C1069.573,332.116,1069.667,330.846,1069.695,329.557z"/></g></svg>
+      <p>Desarrollado por Rafael Planas <br/>Copyright © 2023 - All right reserved</p>
+    </div> 
+    <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end icons-footer">
+      <a href="https://twitter.com/RafaelAndresPB" target='_blank' class="icon w-6 h-6">
+        <Icon name="bi:twitter"/>  
+      </a> 
+      <a href="https://t.me/mybes00" target='_blank' class="icon w-6 h-6">
+        <Icon name="bi:telegram"/>  
+      </a>
+      <a href="https://github.com/mybess00/" target='_blank' class="icon w-6 h-6">
+        <Icon name="bi:github"/>  
+      </a>
+    </div>
+</footer>
+
+<style>
+  .icon{
+    @apply cursor-pointer
+  }
+</style>

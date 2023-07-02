@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon'
+
+export interface Props {
+    social: Object,
+}
+
+const { social } = Astro.props
+
+const arrSocial = Object.entries(social)
+
+---
+
+<div class="flex flex-row flex-wrap justify-center gap-4 mt-5">
+    {
+        arrSocial.map(([key, value]) => {
+            return  <a target="_blank" href={value} class="cursor-pointer transition-all duration-200 desktop:hover:scale-110">
+                        <div class="h-7 w-7">
+                            <Icon name={`bi:${key}`} />
+                        </div>
+                    </a>
+        })
+    }
+</div>

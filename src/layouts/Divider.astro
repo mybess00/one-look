@@ -1,0 +1,15 @@
+---
+export interface Props {
+    title: string,
+}
+
+const { title } = Astro.props
+---
+
+
+<div class="divider my-9 text-xl uppercase">
+    {title}       
+</div>
+<section class="grid gap-8 px-6 grid-cols-2 mx-0 mt-0 mb-5 mobile-section mobile:flex mobile:flex-col mobile:gap-5 mobile:p-0 mobile:mx-4">
+    <slot />
+</section>

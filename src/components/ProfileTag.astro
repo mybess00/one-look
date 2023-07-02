@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon'
+export interface Props {
+    tags: Object
+}
+
+const { tags } = Astro.props
+
+const tagsReference = {
+    'location': 'mdi:location',
+    'web': 'ph:link-bold',
+    'email': 'ic:round-email',
+    'phone': 'ic:round-phone',
+    'ocupation': 'ic:round-work',
+    'birthday': 'majesticons:cake',
+}
+
+const arrTags = Object.entries(tags)
+
+---
+
+<div class='flex flex-row flex-wrap gap-4 justify-center mt-5 mobile:justify-start mobile:gap-x-3 mobile:gap-y-2 mobile:mx-4'>
+    {
+        arrTags.map(([key, value]) => {
+            if (key === 'web') {
+                return  <div class="flex flex-row items-center gap-1">
+                            <div class="w-5 h-5">
+                                <Icon name={tagsReference.web} />
+                            </div>
+                            <a target="_blank" href={`https://${value}`} class="link link-secondary link-hover">{value}</a>
+                        </div>
+            } else if (key === 'email') {
+                return  <div class="flex flex-row items-center gap-1">
+                            <div class="w-5 h-5">
+                                <Icon name={tagsReference.email} />
+                            </div>
+                            <a href={`mailto:${value}`} class="link link-secondary link-hover">{value}</a>
+                        </div>
+            } 
+            return  <div class="flex flex-row items-center gap-1">
+                        <div class="w-5 h-5">
+                            <Icon name={tagsReference[key]} />
+                        </div>
+                        <p>{value}</p>
+                    </div>
+        })
+    }
+</div>

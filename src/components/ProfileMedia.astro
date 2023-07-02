@@ -1,0 +1,21 @@
+---
+import avatar from '/avatar.webp'
+---
+
+<div class='banner-profile'>
+    <div class="avatar">
+      <div class="w-24 desktop:w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <img src={avatar} alt="Profile Image"/>
+      </div>
+    </div>
+</div>
+
+<style>
+  .avatar{  
+    @apply top-[40px];
+  }
+  .banner-profile {
+    background-image: url('/banner.webp');
+    @apply bg-cover no-mobile:rounded-t-2xl flex flex-row items-end justify-center aspect-[3/1]
+  }
+</style>

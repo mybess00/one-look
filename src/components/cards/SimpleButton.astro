@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon';
+export interface Props {
+    title: string,
+    link: string,
+}
+
+const { title, link } = Astro.props
+
+---
+
+<a class="card bg-primary text-primary-content cursor-pointer transition-all duration-300 h-min" target="_blank" href={link}>
+    <div class="card-body items-end justify-between flex-row p-4">
+      <h2 class="card-title place-self-start">{title}</h2>
+      <div class="w-7 h-7">
+        <Icon name="mdi:share"/>
+      </div>
+    </div>
+</a>

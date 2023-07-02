@@ -1,0 +1,21 @@
+---
+export interface Props {
+    name: string, 
+    bio: string
+}
+
+const { name, bio } = Astro.props
+---
+
+<div class='mt-16 mb-1 mx-[5vw] mobile:mx-2'>
+    <div class='text-center text-3xl'>
+      <h1> {name} </h1>
+    </div>
+    <div class='text-justify mt-3 text-xl'>
+      <p> {bio} </p>
+    </div>
+</div>
+
+<style>
+
+</style>

@@ -1,0 +1,24 @@
+---
+export interface Props {
+    title: string,
+    link: string
+}
+
+const { title, link } = Astro.props
+
+let idURL
+const lengthURL = link.length
+
+for (let i = 0; i < lengthURL; i++) {
+    let chartURL = link.slice(i,i+1);
+    if (chartURL == '=' || chartURL == '/'){
+      idURL = link.slice(i+1,lengthURL)
+    }
+}
+
+---
+
+<div class="card bg-primary text-primary-content items-center overflow-hidden">
+    <h2 class="card-title text-center mx-0 my-2">{title}</h2>
+    <iframe width="100%" height="auto" class="cursor-pointer h-full" src={`https://www.youtube.com/embed/${idURL}?controls=0`} title="YouTube video player"></iframe>
+</div>

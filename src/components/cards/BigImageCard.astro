@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon'
+
+export interface Props {
+    title: string,
+    description: string,
+    picture: Object,
+    button: Object
+}
+
+const { title, description, picture, button } = Astro.props
+---
+
+<div class="card image-full bigImageCard">
+    <figure><img src={picture.content} alt={picture.alt} /></figure>
+    <div class="card-body aspect-[4/5] p-0 justify-end mb-2 ml-2">
+      <div class="card-actions justify-end flex-col gap-0">
+        <h2 class="card-title">{title}</h2>
+        <p class="description-picture-card text-sm mr-1">{description}</p>
+        <a target="_blank" href={button.link} class="btn gap-2 btn-sm btn-outline btn-primary btn-picture-card text-sm mt-1.5">
+            {button.label}
+            <div class="w-3.5 h-3.5">
+                <Icon name="bi:box-arrow-up-right" />
+            </div>
+        </a>
+      </div>
+</div>
+
+<style>
+    .bigImageCard.card.image-full:before{
+        @apply bg-transparent;
+        background-image: linear-gradient(
+    0deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(0deg 0% 0%) 9%,
+    rgba(0, 0, 0, 0.75) 18%,
+    rgba(0, 0, 0, 0.69) 20%,
+    rgba(0, 0, 0, 0.58) 25%,
+    transparent 45%,
+    transparent 55%,
+    transparent 64%,
+    transparent 73%,
+    transparent 82%,
+    transparent 91%,
+    transparent 100%
+    );
+    }
+</style>

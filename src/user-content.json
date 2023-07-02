@@ -1,0 +1,38 @@
+{
+    "bio": {
+        "name": "Rafael Planas",
+        "description": "Autodidacta de la Programación desde hace 3 años. Me encantan las criptomonedas y todo lo relacionado con la tecnología blockchain. Actualmente aprendiendo de todo un poco: React, Javascript, CSS, Nodejs, MongoDB and more."
+    },
+    "tags": {
+        "ocupation": "Freelancer",
+		"birthday": "June 11",
+		"email": "betancourtrafael00@gmail.com",
+		"phone": "+123456789",
+		"web": "google.com",
+		"location": "Cuba"
+    },
+    "social": {
+        "twitter": "https://twitter.com/RafaelAndresPB",
+        "telegram": "https://t.me/mybes00",
+        "linkedin": "https://www.linkedin.com/in/rafael-planas-betancourt-380547269",
+        "github": "https://github.com/mybess00",
+        "instagram": "https://instagram.com/rafa0x0?igshid=ZDdkNTZiNTM="
+    },
+    "payOptions": [
+        {
+            "id": "btc",
+            "name": "Bitcoin",
+            "content": "btc address"
+        },
+        {
+            "id": "eth",
+            "name": "Ethereum",
+            "content": "eth address"
+        },
+        {
+            "id": "trx",
+            "name": "Trx",
+            "content": "trx address"
+        }
+    ]
+}

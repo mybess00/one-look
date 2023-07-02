@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon';
+
+export interface Props {
+    title: string,
+    description: string,
+    picture: Object,
+    icons: Object,
+}
+
+const { title, description, picture, icons } = Astro.props
+
+const arrIcons = Object.entries(icons)
+---
+
+<div class="card card-compact bg-base-100 shadow-xl simpleSocialCard">
+    <figure><img src={picture.content} alt={picture.alt}/></figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        {title}
+      </h2>
+      <p class="card-description">{description}</p>
+      <div class="card-actions justify-center mt-3 gap-4">
+        {
+            arrIcons.map(([key, value]) => {
+                return  <a target="_blank" href={value} class="cursor-pointer">
+                            <div class="h-6 w-6">
+                                <Icon name={`bi:${key}`} />
+                            </div>
+                        </a>
+            })
+        }
+      </div>
+    </div>
+</div>

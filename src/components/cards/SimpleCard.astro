@@ -1,0 +1,24 @@
+---
+export interface Props {
+    title: string,
+    description: string,
+    picture: Object,
+    button: Object
+}
+
+const { title, description, picture, button } = Astro.props
+---
+
+
+<div class="card card-compact bg-base-100 shadow-xl">
+    <figure><img src={picture.content} alt={picture.alt}/></figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        {title}
+      </h2>
+      <p class="card-description">{description}</p>
+      <div class="card-actions justify-end">
+        <a class='btn btn-primary' target="_blank" href={button.link} >{button.label}</a>
+      </div>
+    </div>
+</div>

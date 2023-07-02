@@ -1,0 +1,187 @@
+---
+import config from '../user-content.json'
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import Divider from '../layouts/Divider.astro';
+import Subdivider from '../layouts/Subdivider.astro';
+import ProfileMedia from '../components/ProfileMedia.astro';
+import ProfileBio from '../components/ProfileBio.astro';
+import ProfileTag from '../components/ProfileTag.astro';
+import ProfileSocial from '../components/ProfileSocial.astro';
+
+import messi from '/images/messi.jpg'
+import bitnautas from '/images/bitnautas.jpg'
+import cucoders from '/images/cucoders.jpg'
+import emanager from '/images/emanager.jpg'
+import bn1 from '/images/bn1.jpg'
+
+
+import BigImageCard from '../components/cards/BigImageCard.astro';
+import CarouselCard from '../components/cards/CarouselCard.astro';
+import TextCard from '../components/cards/TextCard.astro';
+import CollapseCard from '../components/cards/CollapseCard.astro';
+import HorizontalCard from '../components/cards/HorizontalCard.astro';
+import IconButton from '../components/cards/IconButton.astro';
+import ImageCard from '../components/cards/ImageCard.astro';
+import SimpleButton from '../components/cards/SimpleButton.astro';
+import SimpleCard from '../components/cards/SimpleCard.astro';
+import SimpleSocialCard from '../components/cards/SimpleSocialCard.astro';
+import YoutubeCard from '../components/cards/YoutubeCard.astro';
+import PayOptions from '../components/paylink/PayOptions';
+
+import ThemeChanger from '../components/ThemeChanger'
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<ThemeChanger client:only="react" />
+		<section>
+			<ProfileMedia />
+			<ProfileBio name={config.bio.name} bio={config.bio.description} />
+			<ProfileTag tags={config.tags}/>
+			<ProfileSocial social={config.social}/ >
+		</section>
+		<Divider title='Mis Proyectos'>
+			<TextCard 
+				title="Titulo"
+				description="Esto es una descripcion"
+				button={{
+					'label': 'Visitar',
+					'link': 'www.google.com'
+				}}/>
+
+			<TextCard 
+				title="Titulo"
+				description="Esto es una descripcion"
+				button={{
+					'label': 'Visitar',
+					'link': 'www.google.com'
+				}}/>
+			<HorizontalCard
+				title='eManager App'
+				description='Una aplicacion para administrar los servicios de Etecsa de una manera minimalista.'
+				picture={{
+					'content': emanager,
+					'alt': 'Emanager',
+				}}
+				button={{
+					'label': 'Visitar',
+					'link': 'www.google.com'
+				}}/>
+		</Divider>
+		
+		<Divider title='Comunidades recomendadas'>
+			<SimpleSocialCard
+				title='Titulo'
+				description='Esto es una descripcion'
+				picture={{
+					'content': cucoders,
+					'alt': 'Emanager',
+				}}
+				icons={{
+					'instagram': 'www.instagram.com',
+					'youtube': 'youtube',
+					'facebook': 'facebook',
+					'telegram': 'telegram',
+					'twitter': 'twitter',
+					'whatsapp': 'whatsapp',
+				}}/>
+			<CarouselCard
+				title='Titulo'
+				description='Esto es una descripcion'
+				button={{
+					'label': 'Visitar',
+					'link': 'www.google.com'
+				}}
+				picture={[
+					{
+						'content': bitnautas,
+						'alt': 'bitnautas' 
+					},
+					{
+						'content': cucoders,
+						'alt': 'cucoders 2' 
+					},
+					{
+						'content': bn1,
+						'alt': 'bn1 3' 
+					},
+				]}/>
+		</Divider>
+
+		<Divider title='Videos Recomendados'>
+			<YoutubeCard 
+				title='¿Por qué aprender a Programar?' 
+				link='https://www.youtube.com/watch?v=AKFkTiNnqVo'/>
+			<YoutubeCard 
+				title='¿Por qué aprender a Programar?' 
+				link='https://www.youtube.com/watch?v=AKFkTiNnqVo'/>
+		</Divider>
+
+		<Divider title='Arte'>
+			<BigImageCard
+				title='Titulo'
+				description='Esto es una descripcion'
+				picture={{
+					'content': messi,
+					'alt': 'Emanager',
+				}}
+				button={{
+					'label': 'Visitar',
+					'link': 'www.google.com'
+				}}/>
+			<Subdivider>
+				<IconButton
+				title='Titulo del boton'
+				icon='telegram'
+				link='https://t.me/RafaelAndresPB'/>
+			
+				<SimpleButton
+					title="Titulo"
+					link='www.google.com'/>
+				<CollapseCard
+					title='Titulo'
+					subtitle='Subtitulo'
+					description='Esto es una descripcion'
+					button={{
+						'label': 'Visitar',
+						'link': 'www.google.com'
+					}}/>
+			</Subdivider>
+		</Divider>
+
+		<Divider title='Artículos Recomendados'>
+			<ImageCard
+				title='Titulo'
+				description='Esto es una descripcion'
+				picture={{
+					'content': bn1,
+					'alt': 'Messi',
+				}}
+				button={{
+					'label': 'Visitar',
+					'link': 'www.google.com'
+				}}/>
+			<SimpleCard
+				title='Titulo'
+				description='Descripcion'
+				picture={{
+					'content': cucoders,
+					'alt': 'Emanager',
+				}}
+				button={{
+					'label': 'Visitar',
+					'link': 'www.google.com'
+				}}/>
+		</Divider>
+
+		<PayOptions client:load title="Dona un café al desarrollador" options={config.payOptions}/>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		@apply rounded-2xl desktop:my-4 desktop:mx-48 tablet:mx-20
+	}
+</style>
