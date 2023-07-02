@@ -2,7 +2,6 @@ import Modal from "./Modal";
 import { useState } from "react";
 import copy from "copy-to-clipboard";
 import { ToastContainer, Toast } from "react-bootstrap";
-import { TbQrcode, TbCopy } from "react-icons/tb";
 import amex from '/images/icons/amex.svg'
 import bch from '/images/icons/bch.svg'
 import bnb from '/images/icons/bnb.svg'
@@ -95,10 +94,10 @@ export default function PayCard({ id, name, content }) {
         <div className="payment-description">{name}</div>
         <div className="flex flex-row flex-nowrap justify-center gap-2">
           <div className="cursor-pointer text-xl" onClick={copyInfo}>
-            <TbCopy onClick={copyInfo}/>
+            <img src="/images/icons/copy.svg" alt="copy icon" className="w-5 h-5"/>
           </div>
           <label htmlFor={`modal-qr-${id}`} className="cursor-pointer text-xl">
-            <TbQrcode/>
+            <img src="/images/icons/qrcode.svg" alt="qrcode icon" className="w-5 h-5"/>
           </label>
         </div>
       </div>

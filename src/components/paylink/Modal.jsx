@@ -1,5 +1,4 @@
 import QRCodeSVG from "qrcode.react";
-import { TbCopy } from "react-icons/tb";
 
 export default function Modal ({ title, id, content, picture, copyFunction }) {
   
@@ -20,7 +19,9 @@ export default function Modal ({ title, id, content, picture, copyFunction }) {
                 width: 36,
                 excavate: true,
               }}/>
-            <button className="btn btn-primary gap-2 btn-sm mt-6 px-10" onClick={copyFunction}>< TbCopy/>Copy</button>
+            <button className="btn btn-primary gap-2 btn-sm mt-6 px-10" onClick={copyFunction}>
+              <img src="/images/icons/copy.svg" alt="copy icon" className="w-3.5 h-3.5"/> Copy
+            </button>
           </div>          
         </div>
       </div>
