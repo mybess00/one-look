@@ -1,4 +1,5 @@
-import QRCodeSVG from "qrcode.react";
+import React from "react"
+import { QRCodeSVG } from "qrcode.react";
 
 export default function Modal ({ title, id, content, picture, copyFunction }) {
   

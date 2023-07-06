@@ -1,3 +1,4 @@
+import React from "react"
 import Modal from "./Modal";
 import { useState } from "react";
 import copy from "copy-to-clipboard";
