@@ -1,4 +1,3 @@
-import React from "react"
 import PayCard from './PayCard'
 
 export default function PayOptions ({ title, options }) {
