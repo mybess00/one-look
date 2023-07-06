@@ -1,5 +1,5 @@
 import React from "react"
-import Modal from "./Modal";
+//import Modal from "./Modal";
 import { useState } from "react";
 import copy from "copy-to-clipboard";
 import { ToastContainer, Toast } from "react-bootstrap";
@@ -83,12 +83,12 @@ export default function PayCard({ id, name, content }) {
         </Toast>
       </ToastContainer>
 
-      <Modal 
+      {/*<Modal 
         title={name}
         id={id}
         content={content}
         picture={payReference[`${id}`]}
-        copyFunction={copyInfo}/>
+        copyFunction={copyInfo}/>*/}
 
       <div className="flex flex-row flex-wrap justify-between items-center text-lg py-3 px-2 rounded-lg my-0 mx-6 bg-primary mobile:m-0">
         <div className="w-8"><img src={payReference[`${id}`]}/></div>
