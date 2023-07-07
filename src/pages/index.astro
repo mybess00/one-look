@@ -175,7 +175,7 @@ import ThemeChanger from '../components/ThemeChanger'
 				}}/>
 		</Divider>
 
-		<PayOptions client:load title="Dona un café al desarrollador" options={config.payOptions}/>
+		<PayOptions client:only title="Dona un café al desarrollador" options={config.payOptions}/>
 	</main>
 	<Footer />
 </Layout>
