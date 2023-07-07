@@ -10,7 +10,7 @@ export default function Modal ({ title, id, content, picture, copyFunction }) {
           <label htmlFor={`modal-qr-${id}`} className="btn btn-primary btn-sm btn-circle absolute right-2 top-2">✕</label>
           <h3 className="text-lg font-bold">{title}</h3>
           <div className="flex flex-col items-center my-1.5">
-          <QRCode value={content} size='200'
+          <QRCode value={content} size={200}
             imageSettings={{
               src: `${picture}`,
               x: undefined,
