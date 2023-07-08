@@ -14,10 +14,10 @@ const { title, description, picture, button } = Astro.props
 <div class="card image-full bigImageCard">
     <figure><img src={picture.content} alt={picture.alt} /></figure>
     <div class="card-body aspect-[4/5] p-0 justify-end mb-2 ml-2">
-      <div class="card-actions justify-end flex-col gap-0">
-        <h2 class="card-title">{title}</h2>
-        <p class="description-picture-card text-sm mr-1">{description}</p>
-        <a target="_blank" href={button.link} class="btn gap-2 btn-sm btn-outline btn-primary btn-picture-card text-sm mt-1.5">
+      <div class="card-actions justify-end flex-col gap-2 mobile:gap-0">
+        <h2 class="card-title no-mobile:text-[25px]">{title}</h2>
+        <p class="description-picture-card text-sm mr-1 no-mobile:text-[20px]">{description}</p>
+        <a target="_blank" href={button.link} class="btn gap-2 btn-sm btn-outline btn-primary btn-picture-card text-sm mt-1.5 no-mobile:text-[20px]">
             {button.label}
             <div class="w-3.5 h-3.5">
                 <Icon name="bi:box-arrow-up-right" />

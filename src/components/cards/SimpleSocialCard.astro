@@ -13,13 +13,13 @@ const { title, description, picture, icons } = Astro.props
 const arrIcons = Object.entries(icons)
 ---
 
-<div class="card card-compact bg-base-100 shadow-xl simpleSocialCard">
+<div class="card card-compact bg-base-100 shadow-xl">
     <figure><img src={picture.content} alt={picture.alt}/></figure>
     <div class="card-body">
       <h2 class="card-title">
         {title}
       </h2>
-      <p class="card-description">{description}</p>
+      <p class="card-description no-mobile:text-[20px] text-xl">{description}</p>
       <div class="card-actions justify-center mt-3 gap-4">
         {
             arrIcons.map(([key, value]) => {

@@ -26,7 +26,7 @@ const { title, description, button, picture} = Astro.props
       <h2 class="card-title">
         {title}
       </h2>
-      <p class="card-description">{description}</p>
+      <p class="card-description no-mobile:text-[20px] text-xl">{description}</p>
       <div class="card-actions justify-end">
         <a class='btn btn-primary' target="_blank" href={`https://${button.link}`}>
             {button.label}

@@ -34,7 +34,7 @@ import PayOptions from '../components/paylink/PayOptions';
 import ThemeChanger from '../components/ThemeChanger'
 ---
 <Layout title="Welcome to Astro.">
-	<main class="shadow-[0_25px_60px_7px_rgba(0,0,0,0.35)] ring-1 ring-base-200">
+	<main>
 		<ThemeChanger client:only="react" />
 		<section>
 			<ProfileMedia />
@@ -185,6 +185,6 @@ import ThemeChanger from '../components/ThemeChanger'
 
 <style>
 	main {
-		@apply rounded-2xl desktop:my-4 desktop:mx-48 tablet:mx-20
+		@apply rounded-2xl desktop:my-4 desktop:mx-48 tablet:mx-20 no-mobile:shadow-[0_25px_60px_7px_rgba(0,0,0,0.35)] no-mobile:ring-1 no-mobile:ring-base-200
 	}
 </style>

@@ -9,7 +9,7 @@ export interface Props {
 const { title, description, picture, button } = Astro.props
 ---
 
-<div class="card card-side bg-base-100 shadow-xl horizontalCard">
+<div class="card card-side bg-base-100 shadow-xl no-mobile:text-[20px]">
     <figure class="w-[130%] min-w-[8em]">
         <img src={picture.content} alt={picture.alt} class="h-full"/>
     </figure>

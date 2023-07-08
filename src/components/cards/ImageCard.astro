@@ -10,7 +10,7 @@ const { title, description, picture, button } = Astro.props
 ---
 
 
-<div class="card bg-base-200 shadow-xl image-full">
+<div class="card bg-base-200 shadow-xl image-full no-mobile:text-[20px]">
     <figure><img src={picture.content} alt={picture.alt} /></figure>
     <div class="card-body">
       <h2 class="card-title">{title}</h2>
