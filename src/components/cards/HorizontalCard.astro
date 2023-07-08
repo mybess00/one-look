@@ -10,7 +10,7 @@ const { title, description, picture, button } = Astro.props
 ---
 
 <div class="card card-side bg-base-100 shadow-xl horizontalCard">
-    <figure class="w-[130%]">
+    <figure class="w-[130%] min-w-[8em]">
         <img src={picture.content} alt={picture.alt} class="h-full"/>
     </figure>
     <div class="card-body p-4">

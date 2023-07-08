@@ -14,6 +14,8 @@ import bitnautas from '/images/bitnautas.jpg'
 import cucoders from '/images/cucoders.jpg'
 import emanager from '/images/emanager.jpg'
 import bn1 from '/images/bn1.jpg'
+import criscoart from '/images/criscoart.webp'
+import cucoders_article from '/images/cucoders_article.webp'
 
 
 import BigImageCard from '../components/cards/BigImageCard.astro';
@@ -31,9 +33,8 @@ import PayOptions from '../components/paylink/PayOptions';
 
 import ThemeChanger from '../components/ThemeChanger'
 ---
-
 <Layout title="Welcome to Astro.">
-	<main>
+	<main class="shadow-[0_25px_60px_7px_rgba(0,0,0,0.35)] ring-1 ring-base-200">
 		<ThemeChanger client:only="react" />
 		<section>
 			<ProfileMedia />
@@ -42,56 +43,58 @@ import ThemeChanger from '../components/ThemeChanger'
 			<ProfileSocial social={config.social}/ >
 		</section>
 		<Divider title='Mis Proyectos'>
-			<TextCard 
-				title="Titulo"
-				description="Esto es una descripcion"
+			<ImageCard 
+				title="Paycard"
+				description="Paycard es un unificador de métodos de pago totalmente gratuito y de código abierto. Cuenta con más de 20 métodos de pago, Paycard presenta una interfaz de usuario agradable y única con soporte para modo oscuro automático."
+				picture={{
+					'content': bn1,
+					'alt': 'Messi',
+				}}
 				button={{
-					'label': 'Visitar',
-					'link': 'www.google.com'
-				}}/>
-
-			<TextCard 
-				title="Titulo"
-				description="Esto es una descripcion"
-				button={{
-					'label': 'Visitar',
-					'link': 'www.google.com'
+					'label': 'Github',
+					'link': 'https://github.com/mybess00/paycard'
 				}}/>
 			<HorizontalCard
 				title='eManager App'
-				description='Una aplicacion para administrar los servicios de Etecsa de una manera minimalista.'
+				description='Una aplicacion Android para administrar los servicios de Etecsa de una manera minimalista. Cuenta con todas las herramientas necesarias para hacer un uso rápido e intuitivo de los servicios móviles en Cuba.'
 				picture={{
 					'content': emanager,
 					'alt': 'Emanager',
 				}}
 				button={{
 					'label': 'Visitar',
-					'link': 'www.google.com'
+					'link': 'https://emanager-web.vercel.app/'
 				}}/>
+			<TextCard 
+				title="Frame it!"
+				description="Frame it te permite enmarcar y personalizar tus tweets favoritos de forma sencilla. Puede elegir entre varios diseños y opciones de personalización para que sus tweets sean únicos. (En desarrollo)"
+				button={{
+					'label': 'Visitar',
+					'link': '#'
+				}}/>
+			
 		</Divider>
 		
 		<Divider title='Comunidades recomendadas'>
 			<SimpleSocialCard
-				title='Titulo'
-				description='Esto es una descripcion'
+				title='CuCoders'
+				description='Es una plataforma y comunidad para potenciar el desarrollo de software en Cuba y apoyar a los desarrolladores y emprendedores en su carrera profesional.'
 				picture={{
 					'content': cucoders,
 					'alt': 'Emanager',
 				}}
 				icons={{
-					'instagram': 'www.instagram.com',
-					'youtube': 'youtube',
-					'facebook': 'facebook',
-					'telegram': 'telegram',
-					'twitter': 'twitter',
-					'whatsapp': 'whatsapp',
+					'globe2': 'https://cucoders.dev',
+					'telegram': 'https://t.me/CuCodersComunidad',
+					'twitter': 'https://twitter.com/CuCoders_',
+					'github': 'https://github.com/cucoderscommunity'
 				}}/>
 			<CarouselCard
-				title='Titulo'
-				description='Esto es una descripcion'
+				title='BitNautas'
+				description='Es una comunidad en Cuba relacionada con las criptomonedas y la tecnología blockchain. Su objetivo principal es enseñar a la comunidad el uso y las ventajas de Bitcoin, las criptomonedas y la blockchain.'
 				button={{
-					'label': 'Visitar',
-					'link': 'www.google.com'
+					'label': 'Telegram',
+					'link': 'https://t.me/bitnautas_cu'
 				}}
 				picture={[
 					{
@@ -111,67 +114,67 @@ import ThemeChanger from '../components/ThemeChanger'
 
 		<Divider title='Videos Recomendados'>
 			<YoutubeCard 
-				title='¿Por qué aprender a Programar?' 
-				link='https://www.youtube.com/watch?v=AKFkTiNnqVo'/>
+				title='Si eres programador mira esto' 
+				link='https://www.youtube.com/watch?v=ILS4yYrxY6s'/>
 			<YoutubeCard 
-				title='¿Por qué aprender a Programar?' 
-				link='https://www.youtube.com/watch?v=AKFkTiNnqVo'/>
+				title='El estigma de la edad en la programación' 
+				link='https://www.youtube.com/watch?v=zjfP_8wHwYk'/>
 		</Divider>
 
-		<Divider title='Arte'>
+		<Divider title='Arte, Cultura y Entretenimiento'>
 			<BigImageCard
-				title='Titulo'
-				description='Esto es una descripcion'
+				title='Crisco Art'
+				description='The artist who paint the Light 💡🎨'
 				picture={{
-					'content': messi,
-					'alt': 'Emanager',
+					'content': criscoart,
+					'alt': 'Imagen de Instagram de criscoart',
 				}}
 				button={{
 					'label': 'Visitar',
-					'link': 'www.google.com'
+					'link': 'https://www.instagram.com/criscoart/'
 				}}/>
 			<Subdivider>
 				<IconButton
-				title='Titulo del boton'
-				icon='telegram'
-				link='https://t.me/RafaelAndresPB'/>
+				title='Arquitectura y Tradición'
+				icon='twitter'
+				link='https://twitter.com/archi_tradition'/>
 			
 				<SimpleButton
 					title="Titulo"
 					link='www.google.com'/>
 				<CollapseCard
-					title='Titulo'
-					subtitle='Subtitulo'
-					description='Esto es una descripcion'
+					title='Entérate todo sobre el fútbol'
+					subtitle='Daguito Valdés'
+					description='Creador y Conductor de YO HABLO FUTBOL, el Canal de Fútbol en Youtube #1 en Cuba.'
 					button={{
-						'label': 'Visitar',
-						'link': 'www.google.com'
+						'label': 'Youtube',
+						'link': 'https://www.youtube.com/@yohablofutbol'
 					}}/>
 			</Subdivider>
 		</Divider>
 
 		<Divider title='Artículos Recomendados'>
 			<ImageCard
-				title='Titulo'
-				description='Esto es una descripcion'
+				title='¿Cómo refugiarse de la inflación?'
+				description='El alza de precios y divisas junto a la devaluación de la moneda local ha provocado un empobrecimiento en gran parte de la población y un aumento considerable de la inflación. Conoce las principales vías que existen para refugiarse de la inflación.'
 				picture={{
 					'content': bn1,
 					'alt': 'Messi',
 				}}
 				button={{
 					'label': 'Visitar',
-					'link': 'www.google.com'
+					'link': 'https://twitter.com/bitnautas_cu/status/1555262433459060738?t=5Gh9O0RVf2PDlN42Wb3lLg&s=19'
 				}}/>
 			<SimpleCard
-				title='Titulo'
-				description='Descripcion'
+				title='Crear un proyecto de software sin inversión inicial. Descubre las herramientas gratuitas más efectivas'
+				description='Emprender un proyecto de software sin inversión inicial es más accesible que nunca, gracias a una amplia gama de herramientas disponibles que ofrecen planes gratuitos o freemium.'
 				picture={{
-					'content': cucoders,
-					'alt': 'Emanager',
+					'content': cucoders_article,
+					'alt': 'Foto de portada del articulo de CuCoders',
 				}}
 				button={{
 					'label': 'Visitar',
-					'link': 'www.google.com'
+					'link': 'https://cucoders.dev/publicaciones/manuelernestog/crear-un-proyecto-de-software-sin-inversi-n-inicial-descubre-las-herramientas-gratuitas-m-s-efectivas/'
 				}}/>
 		</Divider>
 

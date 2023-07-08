@@ -132,3 +132,10 @@ const { title, subtitle, description, button } = Astro.props
         --tw-rotate: 135deg;
     }
 </style>
+
+<script>
+    const collapseCards = document.querySelectorAll('.collapse-content > div')
+    collapseCards.forEach((element) => {
+        element.style.boxShadow = 'none'
+    })
+</script>

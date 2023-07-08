@@ -6,7 +6,7 @@ export default function ThemeChanger () {
     themeChange(false)
   }, [])
   return (
-    <select data-choose-theme className='fixed py-2 px-4 z-20 top-2 right-2'>
+    <select data-choose-theme className='fixed py-2 px-4 z-[99999] top-2 right-2'>
       { themes.map((element) => {
         return  <option value={element}>{element}</option>
       })}
