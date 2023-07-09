@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		'./node_modules/tw-elements/dist/js/**/*.js'
+	],
 	theme: {
 		extend: {},
 		screens: {
@@ -11,7 +14,8 @@ module.exports = {
 		}
 	},
 	plugins: [
-		require('daisyui')
+		require('daisyui'),
+		require("tw-elements/dist/plugin.cjs")
 	],
 	daisyui: {
 		themes: [
