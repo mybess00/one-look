@@ -8,16 +8,8 @@ import ProfileMedia from '../components/ProfileMedia.astro';
 import ProfileBio from '../components/ProfileBio.astro';
 import ProfileTag from '../components/ProfileTag.astro';
 import ProfileSocial from '../components/ProfileSocial.astro';
-
-import messi from '/images/messi.jpg'
-import bitnautas from '/images/bitnautas.jpg'
-import cucoders from '/images/cucoders.jpg'
-import emanager from '/images/emanager.jpg'
-import bn1 from '/images/bn1.jpg'
-import criscoart from '/images/criscoart.webp'
-import cucoders_article from '/images/cucoders_article.webp'
-
-
+import ThemeChanger from '../components/ThemeChanger'
+//Cards
 import BigImageCard from '../components/cards/BigImageCard.astro';
 import CarouselCard from '../components/cards/CarouselCard.astro';
 import TextCard from '../components/cards/TextCard.astro';
@@ -30,9 +22,19 @@ import SimpleCard from '../components/cards/SimpleCard.astro';
 import SimpleSocialCard from '../components/cards/SimpleSocialCard.astro';
 import YoutubeCard from '../components/cards/YoutubeCard.astro';
 import PayOptions from '../components/paylink/PayOptions';
-
-import ThemeChanger from '../components/ThemeChanger'
+//Images
+import bitnautas1 from '/images/bitnautas-1.webp'
+import bitnautas2 from '/images/bitnautas-2.webp'
+import bitnautas3 from '/images/bitnautas-3.webp'
+import cucoders from '/images/cucoders.webp'
+import emanager from '/images/emanager.webp'
+import criscoart from '/images/criscoart.webp'
+import cucoders_article from '/images/cucoders_article.webp'
+import hive_article from '/images/hive_article.webp'
+import paycard_img from '/images/paycard.webp'
+import inflation_article from '/images/inflation_article.webp'
 ---
+
 <Layout title="Welcome to Astro.">
 	<main>
 		<ThemeChanger client:only="react" />
@@ -47,8 +49,8 @@ import ThemeChanger from '../components/ThemeChanger'
 				title="Paycard"
 				description="Paycard es un unificador de métodos de pago totalmente gratuito y de código abierto. Cuenta con más de 20 métodos de pago, Paycard presenta una interfaz de usuario agradable y única con soporte para modo oscuro automático."
 				picture={{
-					'content': bn1,
-					'alt': 'Messi',
+					'content': paycard_img,
+					'alt': 'mockup sobre el proyecto paycard',
 				}}
 				button={{
 					'label': 'Github',
@@ -59,7 +61,7 @@ import ThemeChanger from '../components/ThemeChanger'
 				description='Una aplicacion Android para administrar los servicios de Etecsa de una manera minimalista. Cuenta con todas las herramientas necesarias para hacer un uso rápido e intuitivo de los servicios móviles en Cuba.'
 				picture={{
 					'content': emanager,
-					'alt': 'Emanager',
+					'alt': 'imagen promocional de emanager app',
 				}}
 				button={{
 					'label': 'Visitar',
@@ -81,7 +83,7 @@ import ThemeChanger from '../components/ThemeChanger'
 				description='Es una plataforma y comunidad para potenciar el desarrollo de software en Cuba y apoyar a los desarrolladores y emprendedores en su carrera profesional.'
 				picture={{
 					'content': cucoders,
-					'alt': 'Emanager',
+					'alt': 'foto de cucoders con su logo',
 				}}
 				icons={{
 					'globe2': 'https://cucoders.dev',
@@ -98,16 +100,16 @@ import ThemeChanger from '../components/ThemeChanger'
 				}}
 				picture={[
 					{
-						'content': bitnautas,
-						'alt': 'bitnautas' 
+						'content': bitnautas1,
+						'alt': 'bitnautas portada no. 1' 
 					},
 					{
-						'content': cucoders,
-						'alt': 'cucoders 2' 
+						'content': bitnautas2,
+						'alt': 'bitnautas portada no. 2' 
 					},
 					{
-						'content': bn1,
-						'alt': 'bn1 3' 
+						'content': bitnautas3,
+						'alt': 'bitnautas portada no. 3' 
 					},
 				]}/>
 		</Divider>
@@ -154,17 +156,30 @@ import ThemeChanger from '../components/ThemeChanger'
 		</Divider>
 
 		<Divider title='Artículos Recomendados'>
-			<ImageCard
-				title='¿Cómo refugiarse de la inflación?'
-				description='El alza de precios y divisas junto a la devaluación de la moneda local ha provocado un empobrecimiento en gran parte de la población y un aumento considerable de la inflación. Conoce las principales vías que existen para refugiarse de la inflación.'
-				picture={{
-					'content': bn1,
-					'alt': 'Messi',
-				}}
-				button={{
-					'label': 'Visitar',
-					'link': 'https://twitter.com/bitnautas_cu/status/1555262433459060738?t=5Gh9O0RVf2PDlN42Wb3lLg&s=19'
-				}}/>
+			<Subdivider>
+				<ImageCard
+					title='¿Cómo refugiarse de la inflación?'
+					description='El alza de precios y divisas junto a la devaluación de la moneda local ha provocado un empobrecimiento en gran parte de la población y un aumento considerable de la inflación. Conoce las principales vías que existen para refugiarse de la inflación.'
+					picture={{
+						'content': inflation_article,
+						'alt': 'portada del articulo sobre la inflacion',
+					}}
+					button={{
+						'label': 'Visitar',
+						'link': 'https://twitter.com/bitnautas_cu/status/1555262433459060738?t=5Gh9O0RVf2PDlN42Wb3lLg&s=19'
+					}}/>
+				<HorizontalCard
+					title='¿Cómo funciona la blockchain? Su uso fuera de las criptomonedas.'
+					description='La blockchain es la tecnología en la que están construidas las criptomonedas. Si quieres conocer su funcionamiento dentro y fuera de las criptomonedas, estás en el luhar correcto.'
+					picture={{
+						'content': hive_article,
+						'alt': 'Portada del artículo de Hive de Bitnautas',
+					}}
+					button={{
+						'label': 'Visitar',
+						'link': 'https://hive.blog/crypto/@bitnautas/como-funciona-la-blockchain-su-uso-fuera-de-las-criptomonedas'
+					}}/>
+			</Subdivider>
 			<SimpleCard
 				title='Crear un proyecto de software sin inversión inicial. Descubre las herramientas gratuitas más efectivas'
 				description='Emprender un proyecto de software sin inversión inicial es más accesible que nunca, gracias a una amplia gama de herramientas disponibles que ofrecen planes gratuitos o freemium.'
@@ -185,6 +200,6 @@ import ThemeChanger from '../components/ThemeChanger'
 
 <style>
 	main {
-		@apply rounded-2xl desktop:my-4 desktop:mx-48 tablet:mx-20 no-mobile:shadow-[0_25px_60px_7px_rgba(0,0,0,0.35)] no-mobile:ring-1 no-mobile:ring-base-200
+		@apply rounded-2xl desktop:my-4 desktop:mx-48 tablet:mx-20 no-mobile:shadow-[0_25px_60px_7px_rgba(0,0,0,0.35)] no-mobile:ring-1 no-mobile:ring-base-200 pb-4
 	}
 </style>

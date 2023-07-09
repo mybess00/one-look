@@ -10,18 +10,42 @@ const { title, description, button, picture} = Astro.props
 
 ---
 
-<div class="card card-compact bg-base-100 shadow-xl overflow-hidden">
-    <div class="carousel w-full">
-        {picture.map((image, index, arr) => {
-            return  <div id={`slide${index+1}`} class="carousel-item relative w-full">
-                        <img src={image.content} alt={image.alt} class="w-full" />
-                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href={`#slide${index == 0 ? arr.length : index}`} class="btn btn-circle">❮</a> 
-                            <a href={`#slide${index+1 == arr.length ? '1' : index+2}`} class="btn btn-circle">❯</a>
-                        </div>
-                    </div> 
-        })}
+<div class="card card-compact bg-base-100 shadow-xl overflow-hidden motion-reduce:transition-none">
+  <div id="carouselExampleControls" class="relative" data-te-carousel-init data-te-carousel-slide>
+    <!--Carousel items-->
+    <div class="main-container-items">
+      {
+        picture.map((picture, index) => {
+          if (index == 0) {
+            return  <div class="first-item-container" data-te-carousel-item data-te-carousel-active>
+                      <img src={picture.content} alt={picture.alt} class="block w-full"/>
+                    </div>
+          }
+          return  <div class="item-container" data-te-carousel-item>
+                    <img src={picture.content} alt={picture.alt} class="block w-full"/>
+                  </div>
+        })
+      }
     </div>
+    <!--Carousel controls - prev item-->
+    <button class="button-prev-item" type="button" data-te-target="#carouselExampleControls" data-te-slide="prev">
+      <span class="span-button-item-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </span>
+      <span class="span-button-item">Previous</span>
+    </button>
+    <!--Carousel controls - next item-->
+    <button class="button-next-item" type="button" data-te-target="#carouselExampleControls" data-te-slide="next">
+      <span class="span-button-item-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </span>
+      <span class="span-button-item">Next</span>
+    </button>
+  </div>
     <div class="card-body">
       <h2 class="card-title">
         {title}
@@ -34,3 +58,36 @@ const { title, description, button, picture} = Astro.props
       </div>
     </div>
 </div>
+
+<style>
+  .main-container-items {
+    @apply relative w-full overflow-hidden after:clear-both after:block after:content-['']
+  }
+  .first-item-container {
+    @apply relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none
+  }
+  .item-container {
+    @apply relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none
+  }
+  .button-prev-item {
+    @apply absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none
+  }
+  .button-next-item {
+    @apply absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none
+  }
+  .span-button-item {
+    @apply !absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]
+  }
+  .span-button-item-svg {
+    @apply flex items-center justify-center h-8 w-8 btn-primary btn-circle
+  }
+</style>
+
+<script>
+  import {
+    Carousel,
+    initTE,
+  } from "tw-elements";
+
+  initTE({ Carousel });
+</script>

@@ -5,10 +5,10 @@
     },
     "tags": {
         "ocupation": "Freelancer",
-		"birthday": "June 11",
+		"birthday": "June",
 		"email": "betancourtrafael00@gmail.com",
-		"phone": "+123456789",
-		"web": "google.com",
+		"phone": "+53 5XXXXXXX",
+		"web": "rafaelpb-onelook.vercel.app/",
 		"location": "Cuba"
     },
     "social": {
@@ -22,17 +22,32 @@
         {
             "id": "btc",
             "name": "Bitcoin",
-            "content": "btc address"
+            "content": "1EwBc1EJL6JwgYEHzTFR3QVc9nGN9Uw8hv"
+        },
+        {
+            "id": "btcln",
+            "name": "Bitcoin Lightnin",
+            "content": "lnbc1pj24se6pp5ajresayxeajsmag5v3c6qkzwsdmd0vzmhntxxwjmagtc84ry0gqqdqqxqyjw5q9q7sqqqqqqqqqqqqqqqqqqqqqqqqq9qsqsp5rp3lulewh2r8a6sgdpjeqxhr5hf5qx9mm5sracunyrju3zznr0nqrzjqwryaup9lh50kkranzgcdnn2fgvx390wgj5jd07rwr3vxeje0glcll7rakfdwz3hnyqqqqlgqqqqqeqqjqm295jsvlttrwm26rj2dl6m2ng830nsvgpyfcjn9anmf7mjkw9qjnvne3rpw5ldxmanhzkpcef4vd0z5zdhz6v5ypqxytc56je585hcqqzv5rtr"
         },
         {
             "id": "eth",
             "name": "Ethereum",
-            "content": "eth address"
+            "content": "0x9D5e45d1AfBa58900a9785D6524a805F2aeCF8A5"
+        },
+        {
+            "id": "ltc",
+            "name": "Litecoin",
+            "content": "ltc1qcnndzttgh6v4tl3mw869kuxs8r7ru4x4x8h860"
         },
         {
             "id": "trx",
             "name": "Trx",
-            "content": "trx address"
+            "content": "TEA6wkVML8VRCo865YJdpuS4eoWei5wGhk"
+        },
+        {
+            "id": "hive",
+            "name": "Hive",
+            "content": "bitnautas"
         }
     ]
 }

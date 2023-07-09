@@ -6,6 +6,7 @@ import amex from '/images/icons/amex.svg'
 import bch from '/images/icons/bch.svg'
 import bnb from '/images/icons/bnb.svg'
 import btc from '/images/icons/btc.svg'
+import btcln from '/images/icons/btcln.svg'
 import busd from '/images/icons/busd.svg'
 import card from '/images/icons/card.svg'
 import cashapp from '/images/icons/cashapp.svg'
@@ -26,7 +27,7 @@ import visa from '/images/icons/visa.svg'
 import zec from '/images/icons/zec.svg'
 import zelle from '/images/icons/zelle.svg'
 import zinli from '/images/icons/zinli.svg'
-import { TbCopy } from "react-icons/tb";
+import { TbCopy, TbQrcode } from "react-icons/tb";
 
 export default function PayCard({ id, name, content }) {
 
@@ -35,6 +36,7 @@ export default function PayCard({ id, name, content }) {
     bch,
     bnb,
     btc,
+    btcln,
     busd,
     card,
     cashapp,
@@ -78,7 +80,7 @@ export default function PayCard({ id, name, content }) {
           className="mb-2.5 mr-2.5 p-2 card toast"
         >
           <Toast.Header closeButton={true} closeLabel="Close">
-            <b className="font-bold">Copied to clipboard</b>
+            <b className="font-bold text-primary-content">Copied to clipboard</b>
           </Toast.Header>
         </Toast>
       </ToastContainer>
@@ -94,11 +96,11 @@ export default function PayCard({ id, name, content }) {
         <div className="w-8"><img src={payReference[`${id}`]}/></div>
         <div className="text-primary-content">{name}</div>
         <div className="flex flex-row flex-nowrap justify-center gap-2">
-          <div className="cursor-pointer text-xl" onClick={copyInfo}>
-            <img src="/images/icons/copy.svg" alt="copy icon" className="w-5 h-5"/>
+          <div className="cursor-pointer text-xl text-primary-content" onClick={copyInfo}>
+            <TbCopy/>
           </div>
           <label htmlFor={`modal-qr-${id}`} className="cursor-pointer text-xl text-primary-content">
-            <TbCopy/>
+            <TbQrcode/>
           </label>
         </div>
       </div>

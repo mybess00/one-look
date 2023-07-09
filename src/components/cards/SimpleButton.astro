@@ -9,7 +9,7 @@ const { title, link } = Astro.props
 
 ---
 
-<a class="card bg-primary text-primary-content cursor-pointer transition-all duration-300 h-min hover:scale-105" target="_blank" href={link}>
+<a class="card bg-primary text-primary-content cursor-pointer transition-all duration-300 h-min no-mobile:hover:scale-105" target="_blank" href={link}>
     <div class="card-body items-end justify-between flex-row p-4">
       <h2 class="card-title place-self-start">{title}</h2>
       <div class="w-7 h-7">
