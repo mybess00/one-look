@@ -1,5 +1,3 @@
-# Astro Starter Kit: Basics
-
 # What is OneLook?
 
 It is a link unifier that emerges as an open source and self-hosted alternative to tools like Linktree, ContactInBio, Linkpop, Campsite and Bio.Link.
