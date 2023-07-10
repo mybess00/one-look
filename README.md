@@ -1,55 +1,84 @@
 # Astro Starter Kit: Basics
 
+# What is OneLook?
+
+It is a link unifier that emerges as an open source and self-hosted alternative to tools like Linktree, ContactInBio, Linkpop, Campsite and Bio.Link.
+
+The links are organized in the form of cards that have a high level of customization.
+
+It also has a component that is a payment method organizer.
+
+In the presentation of the page you will find a profile image, a banner, a name, a brief description, your main social networks and the various labels such as occupation, phone, email, birthday, location, link to a website, among others.
+
+Stack: **Astro, TailwindCSS and daisyUI**
+
+## Description
+
+The profile information must be configured in the **user-content.json** file. To add the components you only have to work in the file **index.astro**
+
+**Divider** will divide the content into sections and will contain the **title** property, **Subdivider** will arrange the content in a cell of a column vertically.
+
+The icons that are displayed in the components must be chosen in [Iconify](https://icon-sets.iconify.design/)
+
+**Available Components**
+- BigImageCard
+- CarouselCards
+- CollapseCard
+- HorizontalCard
+- IconButton
+- ImageCard
+- SimpleButton
+- SimpleCard
+- SimpleSocialCard
+- TextCard
+- YoutubeCard
+
+The **PayOptions** component is configured within the **user-content.json** file.
+
+All payment options must follow the following structure:
+
 ```
-npm create astro@latest -- --template basics
+{
+    "id": "btc",
+    "name": "Bitcoin",
+    "content": "bitcoin address",
+}
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+The **id** property is very important, it must always be equal to one of the allowed options.  
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+In **name** you are free to choose what to put to identify the payment method. Within **content** must go the address or payment link.  
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+**Available payment options (id):**
 
+- PayPal (paypal)
+- Mastercard (mastercard)
+- American Express (amex)
+- VISA (visa)
+- Zinli Card (zinli)
+- Cash App (cashapp)
+- Zelle (zelle)
+- QvaPay (qvapay)
+- A card (card)
+- Bitcoin (btc)
+- Bitcoin LN (btcln)
+- Ethereum (eth)
+- Litecoin (ltc)
+- BNB (bnb)
+- USDT (usdt)
+- BUSD (busd)
+- TRX (trx)
+- Dash (dash)
+- Ton (ton)
+- Solana (solana)
+- Doge (doge)
+- Matic Polygon (matic)  
+- Bitcoin Cash (bch)
+- Hive (hive)
+- Zcash (zec)
 
-## 🚀 Project Structure
+If you want to add another **PayOptions** component just add inside **user-content.json** another property with the same **payOptions** structure.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Contributions
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to make any request and change request
